@@ -11,7 +11,7 @@ public class Pintauñas {
      * Constructor
      */
     public Pintauñas(String colorPintauñas, int precioPintauñas) {
-        color = "colorPintauñas";
+        color = colorPintauñas;
         precio = precioPintauñas;
         stock = true;
     }
@@ -55,7 +55,7 @@ public class Pintauñas {
      * Cambiar la disponibiladad del stock
      */
     public boolean stock() {
-         if (stock == true) {
+         if (stock) {
             stock = false;
         }
         else {
@@ -67,10 +67,14 @@ public class Pintauñas {
     /*
      * Imprimir los detalles del producto
      */
-    public void detallesDeProducto() {
-         System.out.println(""); 
+    public void detalleDeProducto() {
+        if (stock) {
+            System.out.println("Color: " + color + " Precio: " + precio + " Disponible: si"); 
+        }
+        else {
+            System.out.println("Color: " + color + " Precio: " + precio + " Disponible: no");
+        }
     }
-
     /*
      * Imprimir el resto de detalles
      */
